@@ -49,7 +49,7 @@ export default function BlogIndex() {
       metaDescription.setAttribute('name', 'description');
       document.head.appendChild(metaDescription);
     }
-    metaDescription.setAttribute('content', 'Leia nossos artigos estratégicos sobre investimentos imobiliários nos EUA. Análises dos melhores estados, guias para brasileiros e comparações de estratégias de investimento.');
+    metaDescription.setAttribute('content', 'Leia nossos artigos sobre investimentos imobiliários nos EUA. Análises dos melhores estados, guias para brasileiros e comparações de estratégias de investimento.');
     
     // Open Graph tags
     let ogTitle = document.querySelector('meta[property="og:title"]');

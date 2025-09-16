@@ -82,7 +82,7 @@ export default function AboutSection() {
           viewport={{ once: true }}
           className="mt-24"
         >
-          <Card className="bg-gradient-to-r from-primary/10 to-destructive/10 border border-border/50 shadow-xl">
+          <Card className="bg-gradient-to-br from-blue-900/15 via-slate-800/12 to-indigo-950/18 border border-blue-800/30 shadow-xl backdrop-blur-sm">
             <CardContent className="p-12 text-center">
               <h3 className="text-3xl font-bold text-foreground mb-8" data-testid="text-purpose-title">
                 Nosso Propósito

@@ -113,7 +113,7 @@ export default function InsightsSection() {
               className="border-primary text-primary"
               data-testid="button-read-articles"
             >
-              Ler artigos estratégicos
+              Ler artigos
             </Button>
           </Link>
         </motion.div>
