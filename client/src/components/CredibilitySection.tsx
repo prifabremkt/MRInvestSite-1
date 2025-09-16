@@ -69,7 +69,7 @@ export default function CredibilitySection() {
             >
               {/* Gradient border wrapper */}
               <div className="p-[1px] bg-gradient-to-br from-primary/30 to-destructive/30 rounded-2xl">
-                <div className="bg-background/50 backdrop-blur-sm rounded-2xl p-0 h-full">
+                <div className="bg-transparent rounded-2xl p-0 h-full">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -108,7 +108,7 @@ export default function CredibilitySection() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-r from-card/80 via-card/90 to-card/80 backdrop-blur-xl rounded-2xl p-0 border border-primary/20 relative">
+          <div className="bg-transparent rounded-2xl p-0 border border-primary/20 relative">
             <div className="flex items-center justify-center gap-3 mb-4">
               <motion.div
                 animate={{ rotate: 360 }}
