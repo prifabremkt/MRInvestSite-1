@@ -28,12 +28,12 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-bold font-poppins text-white mb-8 leading-tight tracking-tight"
+            className="text-4xl md:text-6xl font-bold font-poppins text-white mb-8 leading-tight"
             data-testid="text-hero-headline"
           >
-            MRInvest
-            <span className="block text-4xl md:text-6xl font-normal text-white/90 mt-2">
-              Real Estate. Real Results.
+            A incorporadora
+            <span className="block text-white mt-2">
+              do investidor
             </span>
           </motion.h1>
           
@@ -41,32 +41,24 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-xl md:text-2xl text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed font-medium"
+            className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed"
             data-testid="text-hero-subheadline"
           >
-            Invista nos Estados Unidos. Proteja seu patrimônio. Multiplique sua renda.
+            Seja um sócio-investidor de grandes empreendimentos e multiplique o seu patrimônio
           </motion.p>
           
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center items-center"
+            className="flex justify-center"
           >
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-primary to-destructive text-white"
+              className="bg-gradient-to-r from-primary to-destructive text-white px-8 py-3 text-lg font-semibold"
               data-testid="button-cta-hero"
             >
-              Quero acesso às oportunidades
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="border-white/30 text-white bg-white/10 backdrop-blur-sm"
-              data-testid="button-secondary-hero"
-            >
-              Saiba mais
+              Quero fazer parte
             </Button>
           </motion.div>
         </motion.div>
