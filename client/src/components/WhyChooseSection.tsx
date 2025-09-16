@@ -46,11 +46,8 @@ export default function WhyChooseSection() {
           viewport={{ once: true }}
           className="text-left mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2" data-testid="text-why-choose-title">
-            Alguns dos benefícios que
-          </h2>
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8" data-testid="text-why-choose-subtitle">
-            você tem com a MRInvest:
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6" data-testid="text-why-choose-title">
+            Alguns dos benefícios que<br />você tem com a Capital Concreto:
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-destructive mb-8" />
         </motion.div>
