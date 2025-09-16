@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +37,7 @@ export default function Header() {
             className="text-sm font-medium text-foreground/70 hover:text-foreground relative group transition-all duration-200"
             data-testid="link-sobre"
           >
-            Sobre
+            {t('nav.about')}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-destructive transition-all duration-200 group-hover:w-full" />
           </a>
           <a 
@@ -43,7 +45,7 @@ export default function Header() {
             className="text-sm font-medium text-foreground/70 hover:text-foreground relative group transition-all duration-200"
             data-testid="link-projetos"
           >
-            Projetos
+            {t('nav.projects')}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-destructive transition-all duration-200 group-hover:w-full" />
           </a>
           <a 
@@ -51,7 +53,7 @@ export default function Header() {
             className="text-sm font-medium text-foreground/70 hover:text-foreground relative group transition-all duration-200"
             data-testid="link-como-funciona"
           >
-            Como Funciona
+            {t('nav.how-it-works')}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-destructive transition-all duration-200 group-hover:w-full" />
           </a>
           <a 
@@ -59,7 +61,7 @@ export default function Header() {
             className="text-sm font-medium text-foreground/70 hover:text-foreground relative group transition-all duration-200"
             data-testid="link-insights"
           >
-            Insights
+            {t('nav.insights')}
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-destructive transition-all duration-200 group-hover:w-full" />
           </a>
         </nav>
@@ -70,7 +72,7 @@ export default function Header() {
             className="bg-gradient-to-r from-primary to-destructive text-white font-medium"
             data-testid="button-cta-header"
           >
-            Quero Investir
+            {t('nav.contact')}
           </Button>
         </a>
       </div>

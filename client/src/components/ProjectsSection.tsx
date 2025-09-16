@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const projects = [
   {
@@ -9,10 +10,10 @@ const projects = [
     title: "Residential Port Charlotte",
     location: "Ocean Channel - FL",
     roiAnual: "18%",
-    prazo: "45 dias",
+    prazo: "45",
     progressoCaptacao: 78,
     investimentoMinimo: "USD 85.000",
-    tag: "Disponível",
+    tagKey: "projects.tag.available",
     tagColor: "bg-green-600"
   },
   {
@@ -20,10 +21,10 @@ const projects = [
     title: "Commercial Strip Mall",
     location: "Davenport - FL", 
     roiAnual: "22%",
-    prazo: "30 dias",
+    prazo: "30",
     progressoCaptacao: 85,
     investimentoMinimo: "USD 120.000",
-    tag: "Disponível",
+    tagKey: "projects.tag.available",
     tagColor: "bg-green-600"
   },
   {
@@ -31,15 +32,17 @@ const projects = [
     title: "Industrial I (Gatorade)",
     location: "17-92 Corridor - FL",
     roiAnual: "25%",
-    prazo: "60 dias",
+    prazo: "60",
     progressoCaptacao: 92,
     investimentoMinimo: "USD 200.000",
-    tag: "Últimas Vagas",
+    tagKey: "projects.tag.last-spots",
     tagColor: "bg-red-600"
   }
 ];
 
 export default function ProjectsSection() {
+  const { t } = useLanguage();
+  
   return (
     <section id="projetos" className="py-32 bg-background border-t border-border/50">
       <div className="container mx-auto px-6">
@@ -52,10 +55,10 @@ export default function ProjectsSection() {
         >
           <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-destructive mx-auto mb-8" />
           <h2 className="text-4xl md:text-5xl font-bold font-poppins text-foreground mb-8" data-testid="text-projects-title">
-            Projetos em Destaque
+            {t('projects.title')}
           </h2>
           <p className="text-xl text-foreground/60 max-w-3xl mx-auto" data-testid="text-projects-subtitle">
-            Descubra oportunidades exclusivas de investimento imobiliário cuidadosamente selecionadas nos Estados Unidos
+            {t('projects.subtitle')}
           </p>
         </motion.div>
 
@@ -78,7 +81,7 @@ export default function ProjectsSection() {
                   />
                   <div className="absolute top-3 left-3">
                     <span className={`${project.tagColor} text-white px-2 py-1 rounded text-xs font-medium`}>
-                      {project.tag}
+                      {t(project.tagKey)}
                     </span>
                   </div>
                 </div>
@@ -95,13 +98,13 @@ export default function ProjectsSection() {
                   
                   <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
                     <div>
-                      <div className="text-gray-400 mb-1">ROI Anual</div>
+                      <div className="text-gray-400 mb-1">{t('projects.roi-annual')}</div>
                       <div className="text-white font-semibold text-lg" data-testid={`text-project-roi-${index}`}>
                         {project.roiAnual}
                       </div>
                     </div>
                     <div>
-                      <div className="text-gray-400 mb-1">Prazo</div>
+                      <div className="text-gray-400 mb-1">{t('projects.deadline')}</div>
                       <div className="text-white font-semibold" data-testid={`text-project-prazo-${index}`}>
                         {project.prazo}
                       </div>
@@ -110,7 +113,7 @@ export default function ProjectsSection() {
                   
                   <div className="mb-4">
                     <div className="flex justify-between text-sm mb-2">
-                      <span className="text-gray-400">Progresso da Captação</span>
+                      <span className="text-gray-400">{t('projects.progress')}</span>
                       <span className="text-white font-semibold">{project.progressoCaptacao}%</span>
                     </div>
                     <div className="w-full bg-gray-700 rounded-full h-2">
@@ -122,7 +125,7 @@ export default function ProjectsSection() {
                   </div>
                   
                   <div className="mb-4 pb-4 border-b border-gray-700">
-                    <div className="text-gray-400 text-sm">Investimento mínimo:</div>
+                    <div className="text-gray-400 text-sm">{t('projects.min-investment')}:</div>
                     <div className="text-white font-semibold" data-testid={`text-project-investment-${index}`}>
                       {project.investimentoMinimo}
                     </div>
@@ -132,7 +135,7 @@ export default function ProjectsSection() {
                     className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium"
                     data-testid={`button-project-${index}`}
                   >
-                    Baixar apresentação
+                    {t('projects.download-presentation')}
                   </Button>
                 </CardContent>
               </Card>
@@ -153,7 +156,7 @@ export default function ProjectsSection() {
               className="bg-gradient-to-r from-primary to-destructive text-white"
               data-testid="button-view-all-projects"
             >
-              Ver todas as oportunidades
+              {t('projects.view-all-opportunities')}
             </Button>
           </a>
         </motion.div>

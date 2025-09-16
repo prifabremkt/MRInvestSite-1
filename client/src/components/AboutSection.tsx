@@ -1,7 +1,10 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function AboutSection() {
+  const { t } = useLanguage();
+  
   return (
     <section id="sobre" className="py-32 bg-background border-t border-border/50">
       <div className="container mx-auto px-6">
@@ -14,14 +17,14 @@ export default function AboutSection() {
         >
           <div className="w-16 h-0.5 bg-gradient-to-r from-primary to-destructive mx-auto mb-8" />
           <h2 className="text-4xl md:text-5xl font-bold font-poppins text-foreground mb-8" data-testid="text-about-title">
-            Sobre a MRInvest
+            {t('about.title')}
           </h2>
           <div className="max-w-4xl mx-auto text-xl text-foreground/70 leading-relaxed space-y-8" data-testid="text-about-content">
             <p className="text-2xl font-medium">
-              A MRInvest conecta você, investidor brasileiro, a empreendimentos imobiliários exclusivos nos EUA — com estratégia, segurança jurídica e resultados reais.
+              {t('about.intro')}
             </p>
             <p>
-              Nossa missão é democratizar o acesso aos melhores investimentos imobiliários internacionais, oferecendo proteção patrimonial e rentabilidade premium para nossos clientes.
+              {t('about.mission')}
             </p>
           </div>
         </motion.div>
@@ -46,25 +49,25 @@ export default function AboutSection() {
                 </div>
                 <div className="col-span-2 text-center md:text-left">
                   <h3 className="text-2xl font-semibold text-foreground mb-6" data-testid="text-founders-title">
-                    Nossos Fundadores
+                    {t('about.founders.title')}
                   </h3>
                   
                   <div className="space-y-6">
                     <div>
                       <h4 className="text-lg font-semibold text-foreground mb-2" data-testid="text-michel-name">
-                        Michel Pires
+                        {t('about.michel.name')}
                       </h4>
                       <p className="text-foreground/70 leading-relaxed" data-testid="text-michel-description">
-                        Executivo com histórico comprovado no desenvolvimento de projetos imobiliários na Flórida, da aquisição à entrega.
+                        {t('about.michel.description')}
                       </p>
                     </div>
                     
                     <div>
                       <h4 className="text-lg font-semibold text-foreground mb-2" data-testid="text-william-name">
-                        William Martinelli
+                        {t('about.william.name')}
                       </h4>
                       <p className="text-foreground/70 leading-relaxed" data-testid="text-william-description">
-                        Especialista em estrutura, captação e automação, com experiência em startups e consultoria de crescimento.
+                        {t('about.william.description')}
                       </p>
                     </div>
                   </div>
@@ -85,16 +88,16 @@ export default function AboutSection() {
           <Card className="bg-gradient-to-br from-blue-900/15 via-slate-800/12 to-indigo-950/18 border border-blue-800/30 shadow-xl backdrop-blur-sm">
             <CardContent className="p-12 text-center">
               <h3 className="text-3xl font-bold text-foreground mb-8" data-testid="text-purpose-title">
-                Nosso Propósito
+                {t('about.purpose.title')}
               </h3>
               
               <div className="max-w-4xl mx-auto space-y-6">
                 <p className="text-lg text-foreground/80 leading-relaxed" data-testid="text-purpose-description-1">
-                  Juntos, unimos décadas de experiência prática em real estate, estruturação jurídica, tecnologia e estratégia de negócios para oferecer ao investidor brasileiro um caminho claro, estruturado e seguro para construir patrimônio nos Estados Unidos.
+                  {t('about.purpose.description1')}
                 </p>
                 
                 <p className="text-xl text-foreground font-medium leading-relaxed" data-testid="text-purpose-description-2">
-                  Guiar brasileiros na realização de sonhos e na conquista de renda em dólar com investimentos reais, consultoria migratória, educação e geração de renda operacional.
+                  {t('about.purpose.description2')}
                 </p>
               </div>
             </CardContent>

@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import luxuryProperty from "@assets/generated_images/Luxury_US_real_estate_a2a4eb62.png";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 function TypingEffect({ texts, speed = 100, delay = 0 }: { texts: string[]; speed?: number; delay?: number }) {
   const [displayText, setDisplayText] = useState("");
@@ -101,6 +102,8 @@ function TypingEffect({ texts, speed = 100, delay = 0 }: { texts: string[]; spee
 }
 
 export default function HeroSection() {
+  const { t } = useLanguage();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Full-bleed background image */}
@@ -132,7 +135,7 @@ export default function HeroSection() {
               className="inline-block px-4 py-2 bg-gradient-to-r from-primary/20 to-destructive/20 backdrop-blur-sm border border-primary/30 rounded-full text-white/90 text-sm font-medium tracking-wider uppercase"
               data-testid="text-hero-tagline"
             >
-              Seu Hub de Investimentos nos EUA
+              {t('hero.tagline')}
             </span>
           </motion.div>
           
@@ -143,8 +146,8 @@ export default function HeroSection() {
             className="text-4xl md:text-6xl font-bold font-poppins text-white mb-8 leading-tight"
             data-testid="text-hero-headline"
           >
-            Invista{" "}
-            <TypingEffect texts={["nos Estados Unidos", "com a MR Invest"]} speed={150} delay={1000} />
+            {t('hero.main-headline')}{" "}
+            <TypingEffect texts={[t('hero.typing.usa'), t('hero.typing.mrinvest')]} speed={150} delay={1000} />
           </motion.h1>
           
           <motion.p 
@@ -154,7 +157,7 @@ export default function HeroSection() {
             className="text-xl md:text-2xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed font-semibold"
             data-testid="text-hero-subheadline"
           >
-            Proteja seu patrimônio. Multiplique sua renda.
+            {t('hero.subheadline')}
           </motion.p>
           
           <motion.p 
@@ -164,7 +167,7 @@ export default function HeroSection() {
             className="text-base md:text-lg text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed"
             data-testid="text-hero-description"
           >
-            A MRInvest conecta você, investidor brasileiro, a empreendimentos imobiliários exclusivos nos EUA — com estratégia, segurança jurídica e resultados reais.
+            {t('hero.description')}
           </motion.p>
           
           <motion.div
@@ -179,7 +182,7 @@ export default function HeroSection() {
                 className="bg-gradient-to-r from-primary to-destructive text-white px-8 py-3 text-lg font-semibold"
                 data-testid="button-cta-hero"
               >
-                Descobrir oportunidades
+                {t('hero.cta')}
               </Button>
             </a>
           </motion.div>

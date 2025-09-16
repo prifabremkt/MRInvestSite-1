@@ -4,8 +4,10 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { LanguageProvider } from "@/contexts/LanguageContext";
 import GeometricBackground from "@/components/GeometricBackground";
 import GeometricTextures from "@/components/GeometricTextures";
+import LanguageSelector from "@/components/LanguageSelector";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 import BlogIndex from "@/pages/blog/index";
@@ -30,14 +32,17 @@ function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ThemeProvider defaultTheme="dark">
-        <TooltipProvider>
-          <GeometricBackground />
-          <GeometricTextures />
-          <div className="relative z-10">
-            <Toaster />
-            <Router />
-          </div>
-        </TooltipProvider>
+        <LanguageProvider>
+          <TooltipProvider>
+            <GeometricBackground />
+            <GeometricTextures />
+            <div className="relative z-10">
+              <Toaster />
+              <Router />
+              <LanguageSelector />
+            </div>
+          </TooltipProvider>
+        </LanguageProvider>
       </ThemeProvider>
     </QueryClientProvider>
   );
