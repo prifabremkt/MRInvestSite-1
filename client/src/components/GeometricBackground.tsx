@@ -33,45 +33,23 @@ export default function GeometricBackground() {
         </svg>
       </div>
 
-      {/* Shapes abstratos/fluidos com blur suave em tons azul escuro e vermelho vinho */}
+      {/* Shapes abstratos/fluidos com blur otimizado */}
       <motion.div 
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 3, ease: "easeOut" }}
-        className="absolute top-20 left-16 w-96 h-96 bg-gradient-to-br from-blue-900/12 via-slate-800/8 to-transparent rounded-full blur-3xl"
+        className="absolute top-20 left-16 w-96 h-96 bg-gradient-to-br from-blue-900/8 via-slate-800/5 to-transparent rounded-full blur-xl"
       />
       <motion.div 
         initial={{ opacity: 0, x: 100 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ duration: 4, delay: 0.5, ease: "easeOut" }}
-        className="absolute top-1/3 right-20 w-[32rem] h-80 bg-gradient-to-bl from-red-900/10 via-rose-800/7 to-transparent rounded-full blur-3xl"
+        className="absolute top-1/3 right-20 w-[32rem] h-80 bg-gradient-to-bl from-red-900/6 via-rose-800/4 to-transparent rounded-full blur-xl"
       />
-      <motion.div 
-        animate={{ 
-          scale: [1, 1.1, 1],
-          opacity: [0.8, 1, 0.8]
-        }}
-        transition={{ 
-          duration: 6, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
-        className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-tr from-blue-950/8 via-indigo-900/6 to-transparent rounded-full blur-3xl"
-      />
-      <div className="absolute top-2/3 right-1/3 w-72 h-96 bg-gradient-to-br from-red-950/9 via-rose-900/6 to-blue-950/4 rounded-[40%] blur-3xl transform rotate-45"></div>
-      <motion.div 
-        animate={{ 
-          y: [0, -20, 0],
-          rotate: [0, 5, 0]
-        }}
-        transition={{ 
-          duration: 8, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
-        className="absolute bottom-32 right-24 w-96 h-72 bg-gradient-to-tl from-blue-800/6 via-slate-700/5 to-red-900/7 rounded-[30%] blur-3xl"
-      />
-      <div className="absolute top-1/2 left-1/12 w-64 h-96 bg-gradient-to-r from-indigo-950/8 via-blue-900/6 to-transparent rounded-[50%] blur-3xl transform -rotate-12"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-to-tr from-blue-950/6 via-indigo-900/4 to-transparent rounded-full blur-lg"></div>
+      <div className="absolute top-2/3 right-1/3 w-72 h-96 bg-gradient-to-br from-red-950/6 via-rose-900/4 to-blue-950/3 rounded-[40%] blur-lg transform rotate-45"></div>
+      <div className="absolute bottom-32 right-24 w-96 h-72 bg-gradient-to-tl from-blue-800/4 via-slate-700/3 to-red-900/4 rounded-[30%] blur-lg"></div>
+      <div className="absolute top-1/2 left-1/12 w-64 h-96 bg-gradient-to-r from-indigo-950/6 via-blue-900/4 to-transparent rounded-[50%] blur-lg transform -rotate-12"></div>
 
       {/* Divisores angulados/ondulados sofisticados com efeito degradê */}
       <div className="absolute top-[18%] left-0 right-0 h-16">
@@ -169,27 +147,15 @@ export default function GeometricBackground() {
         </svg>
       </div>
       
-      {/* Pontos decorativos aprimorados */}
-      <motion.div 
-        animate={{ opacity: [0.1, 0.3, 0.1] }}
-        transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute top-[22%] left-[60%] w-2 h-2 bg-blue-400/20 rounded-full"
-      />
+      {/* Pontos decorativos estáticos - sem animação para melhorar performance */}
+      <div className="absolute top-[22%] left-[60%] w-2 h-2 bg-blue-400/15 rounded-full"></div>
       <div className="absolute top-[45%] right-[40%] w-1.5 h-1.5 bg-rose-400/15 rounded-full"></div>
-      <motion.div 
-        animate={{ scale: [1, 1.5, 1] }}
-        transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-[40%] left-[15%] w-1.5 h-1.5 bg-indigo-400/18 rounded-full"
-      />
+      <div className="absolute bottom-[40%] left-[15%] w-1.5 h-1.5 bg-indigo-400/15 rounded-full"></div>
       <div className="absolute bottom-[60%] right-[15%] w-2 h-2 bg-purple-400/12 rounded-full"></div>
       <div className="absolute top-[80%] left-[75%] w-1 h-1 bg-blue-300/15 rounded-full"></div>
       <div className="absolute top-[28%] right-[55%] w-1.5 h-1.5 bg-rose-300/10 rounded-full"></div>
       <div className="absolute bottom-[70%] left-[8%] w-1 h-1 bg-indigo-300/14 rounded-full"></div>
-      <motion.div 
-        animate={{ opacity: [0.08, 0.25, 0.08] }}
-        transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-        className="absolute bottom-[85%] right-[35%] w-2 h-2 bg-purple-300/16 rounded-full"
-      />
+      <div className="absolute bottom-[85%] right-[35%] w-2 h-2 bg-purple-300/12 rounded-full"></div>
     </div>
   );
 }
