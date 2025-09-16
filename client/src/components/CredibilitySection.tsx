@@ -64,35 +64,39 @@ export default function CredibilitySection() {
                 stiffness: 100
               }}
               viewport={{ once: true }}
-              className="text-center group"
+              className="text-center group relative"
               data-testid={`metric-${index}`}
             >
-              <motion.div
-                whileHover={{ scale: 1.1, rotate: 5 }}
-                transition={{ type: "spring", stiffness: 300 }}
-                className="relative mb-8 mx-auto w-fit"
-              >
-                <div className="w-20 h-20 bg-gradient-to-br from-primary via-destructive to-primary rounded-2xl flex items-center justify-center shadow-2xl relative overflow-hidden group-hover:shadow-primary/25 transition-all duration-500">
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50"></div>
-                  <metric.icon className="w-10 h-10 text-white relative z-10" />
+              {/* Gradient border wrapper */}
+              <div className="p-[1px] bg-gradient-to-br from-primary/30 to-destructive/30 rounded-2xl">
+                <div className="bg-background/50 backdrop-blur-sm rounded-2xl p-8 h-full">
+                  <motion.div
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    className="relative mb-6 mx-auto w-fit"
+                  >
+                    <div className="w-14 h-14 bg-gradient-to-br from-primary via-destructive to-primary rounded-xl flex items-center justify-center relative overflow-hidden transition-all duration-300">
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-50"></div>
+                      <metric.icon className="w-6 h-6 text-white relative z-10" />
+                    </div>
+                  </motion.div>
+                  
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.8, delay: index * 0.3 + 0.4 }}
+                    viewport={{ once: true }}
+                    className="space-y-2"
+                  >
+                    <div className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary to-destructive bg-clip-text text-transparent leading-tight" data-testid={`text-metric-value-${index}`}>
+                      {metric.value}
+                    </div>
+                    <div className="text-muted-foreground font-medium text-sm tracking-wide uppercase" data-testid={`text-metric-label-${index}`}>
+                      {metric.label}
+                    </div>
+                  </motion.div>
                 </div>
-                <div className="absolute -inset-2 bg-gradient-to-r from-primary/20 to-destructive/20 rounded-3xl blur-lg opacity-0 group-hover:opacity-100 transition-all duration-500"></div>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.8, delay: index * 0.3 + 0.4 }}
-                viewport={{ once: true }}
-                className="space-y-3"
-              >
-                <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-primary to-destructive bg-clip-text text-transparent leading-tight" data-testid={`text-metric-value-${index}`}>
-                  {metric.value}
-                </div>
-                <div className="text-muted-foreground font-semibold text-lg tracking-wide uppercase" data-testid={`text-metric-label-${index}`}>
-                  {metric.label}
-                </div>
-              </motion.div>
+              </div>
             </motion.div>
           ))}
         </div>
@@ -102,21 +106,20 @@ export default function CredibilitySection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.8 }}
           viewport={{ once: true }}
-          className="relative max-w-4xl mx-auto"
+          className="max-w-3xl mx-auto"
         >
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-destructive/10 to-primary/10 rounded-3xl blur-xl"></div>
-          <div className="relative bg-gradient-to-r from-card/80 via-card/90 to-card/80 backdrop-blur-xl rounded-3xl p-10 border border-primary/10 shadow-2xl">
-            <div className="flex items-center justify-center gap-4 mb-6">
+          <div className="bg-gradient-to-r from-card/80 via-card/90 to-card/80 backdrop-blur-xl rounded-2xl p-8 border border-primary/20 relative">
+            <div className="flex items-center justify-center gap-3 mb-4">
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 8, repeat: Infinity, ease: "linear" }}
-                className="w-12 h-12 bg-gradient-to-r from-primary to-destructive rounded-full flex items-center justify-center"
+                className="w-8 h-8 bg-gradient-to-r from-primary to-destructive rounded-full flex items-center justify-center"
               >
-                <ArrowRight className="w-6 h-6 text-white" />
+                <ArrowRight className="w-4 h-4 text-white" />
               </motion.div>
-              <div className="h-0.5 w-16 bg-gradient-to-r from-primary to-destructive"></div>
+              <div className="h-0.5 w-12 bg-gradient-to-r from-primary to-destructive"></div>
             </div>
-            <p className="text-2xl md:text-3xl font-bold text-center leading-relaxed" data-testid="text-credibility-statement">
+            <p className="text-lg md:text-xl font-bold text-center leading-relaxed" data-testid="text-credibility-statement">
               <span className="bg-gradient-to-r from-primary to-destructive bg-clip-text text-transparent">MRInvest</span>
               <span className="text-foreground"> não vende promessas.</span>
               <br />

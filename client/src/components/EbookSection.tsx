@@ -54,13 +54,15 @@ export default function EbookSection() {
             </ul>
           </motion.div>
           
-          <Button 
-            size="lg" 
-            className="bg-gradient-to-r from-primary to-destructive text-white"
-            data-testid="button-download-ebook"
-          >
-            Baixar Ebook Gratuitamente
-          </Button>
+          <a href="https://wa.me/14074709867" target="_blank" rel="noopener noreferrer">
+            <Button 
+              size="lg" 
+              className="bg-gradient-to-r from-primary to-destructive text-white"
+              data-testid="button-download-ebook"
+            >
+              Baixar Ebook Gratuitamente
+            </Button>
+          </a>
         </motion.div>
       </div>
     </section>

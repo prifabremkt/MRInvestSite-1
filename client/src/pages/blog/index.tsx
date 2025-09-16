@@ -176,11 +176,11 @@ export default function BlogIndex() {
               <p className="text-muted-foreground mb-8 text-lg max-w-2xl mx-auto" data-testid="text-cta-description">
                 Se você está interessado em investir em imóveis nos EUA com segurança e rentabilidade, nossa equipe pode te ajudar em cada etapa do processo.
               </p>
-              <Link href="/">
+              <a href="https://wa.me/14074709867" target="_blank" rel="noopener noreferrer">
                 <Button size="lg" className="bg-gradient-to-r from-primary to-destructive text-white" data-testid="button-cta-contact">
                   Falar com especialista
                 </Button>
-              </Link>
+              </a>
             </CardContent>
           </Card>
         </motion.div>

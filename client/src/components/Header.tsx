@@ -64,13 +64,15 @@ export default function Header() {
           </a>
         </nav>
         
-        <Button 
-          size="sm"
-          className="bg-gradient-to-r from-primary to-destructive text-white font-medium"
-          data-testid="button-cta-header"
-        >
-          Quero Investir
-        </Button>
+        <a href="https://wa.me/14074709867" target="_blank" rel="noopener noreferrer">
+          <Button 
+            size="sm"
+            className="bg-gradient-to-r from-primary to-destructive text-white font-medium"
+            data-testid="button-cta-header"
+          >
+            Quero Investir
+          </Button>
+        </a>
       </div>
     </header>
   );

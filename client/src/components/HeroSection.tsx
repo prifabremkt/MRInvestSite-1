@@ -122,6 +122,20 @@ export default function HeroSection() {
           transition={{ duration: 1, ease: "easeOut" }}
           className="max-w-5xl mx-auto"
         >
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="mb-4"
+          >
+            <span 
+              className="inline-block px-4 py-2 bg-gradient-to-r from-primary/20 to-destructive/20 backdrop-blur-sm border border-primary/30 rounded-full text-white/90 text-sm font-medium tracking-wider uppercase"
+              data-testid="text-hero-tagline"
+            >
+              Seu Hub de Investimentos nos EUA
+            </span>
+          </motion.div>
+          
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
