@@ -27,7 +27,13 @@ const steps = [
 
 export default function HowItWorksSection() {
   return (
-    <section id="como-funciona" className="py-24 bg-black">
+    <section id="como-funciona" className="py-32 bg-gradient-to-b from-slate-900/95 via-gray-900/90 to-black relative overflow-hidden">
+      {/* Glassmorphism background effects */}
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-900/8 via-purple-800/5 to-red-900/6"></div>
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-600/6 to-purple-600/4 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-gradient-to-l from-red-600/5 to-blue-700/6 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-6 relative z-10">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,14 +60,16 @@ export default function HowItWorksSection() {
               viewport={{ once: true }}
               data-testid={`step-${index}`}
             >
-              <Card className="h-full bg-gray-900 border-gray-800 hover-elevate transition-all duration-300">
-                <CardContent className="p-6 text-center">
+              <Card className="h-full bg-gray-900/60 backdrop-blur-lg border border-gray-700/50 hover-elevate transition-all duration-500 shadow-2xl hover:bg-gray-800/70 hover:border-gray-600/60 hover:shadow-blue-500/10 relative">
+                {/* Glassmorphism overlay com clip para cantos arredondados */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-primary/3 rounded-lg pointer-events-none"></div>
+                <CardContent className="p-8 text-center relative z-10">
                   <div className="relative mb-6">
-                    <div className="absolute -top-2 -left-2 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold z-10">
+                    <div className="absolute -top-3 -left-3 w-10 h-10 bg-gradient-to-br from-primary via-orange-500 to-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold z-20 shadow-lg border border-white/20 backdrop-blur-sm">
                       {index + 1}
                     </div>
-                    <div className="w-16 h-16 bg-gray-800 rounded-xl flex items-center justify-center mx-auto">
-                      <step.icon className="w-8 h-8 text-primary" />
+                    <div className="w-20 h-20 bg-gradient-to-br from-gray-700/80 via-gray-800/70 to-gray-900/80 backdrop-blur-sm rounded-2xl flex items-center justify-center mx-auto border border-gray-600/40 shadow-lg hover:shadow-primary/20 transition-all duration-300">
+                      <step.icon className="w-10 h-10 text-primary drop-shadow-lg" />
                     </div>
                   </div>
                   
@@ -76,6 +84,7 @@ export default function HowItWorksSection() {
             </motion.div>
           ))}
         </div>
+      </div>
       </div>
     </section>
   );

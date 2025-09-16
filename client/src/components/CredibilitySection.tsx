@@ -21,10 +21,11 @@ const metrics = [
 
 export default function CredibilitySection() {
   return (
-    <section className="py-32 bg-gradient-to-b from-background via-card/30 to-background relative overflow-hidden">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--primary)_0%,_transparent_50%)] opacity-5"></div>
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-to-r from-primary/5 to-destructive/5 rounded-full blur-3xl"></div>
+    <section className="py-32 bg-gradient-to-b from-background/95 via-card/40 to-background/95 relative overflow-hidden backdrop-blur-sm">
+      {/* Enhanced Background Effects with Glassmorphism */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--primary)_0%,_transparent_50%)] opacity-8"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[600px] bg-gradient-to-r from-blue-600/8 via-primary/6 to-destructive/8 rounded-full blur-3xl"></div>
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-to-bl from-purple-600/5 via-blue-500/4 to-transparent rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-6 relative z-10">
         <motion.div
@@ -67,9 +68,9 @@ export default function CredibilitySection() {
               className="text-center group relative"
               data-testid={`metric-${index}`}
             >
-              {/* Gradient border wrapper */}
-              <div className="p-[1px] bg-gradient-to-br from-primary/30 to-destructive/30 rounded-2xl">
-                <div className="bg-transparent rounded-2xl p-6 h-full">
+              {/* Premium Glassmorphism card com gradient border */}
+              <div className="p-[1px] bg-gradient-to-br from-primary/40 to-destructive/40 rounded-2xl backdrop-blur-sm shadow-2xl">
+                <div className="bg-background/80 backdrop-blur-md rounded-2xl p-8 h-full border border-white/10 shadow-xl hover:bg-background/90 hover:border-white/20 hover:shadow-2xl transition-all duration-500 group-hover:backdrop-blur-lg">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -108,7 +109,10 @@ export default function CredibilitySection() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-card/30 backdrop-blur-sm rounded-2xl p-6 border border-primary/30 relative">
+          <div className="bg-card/50 backdrop-blur-lg rounded-2xl p-8 border border-primary/40 shadow-2xl hover:bg-card/60 hover:border-primary/50 transition-all duration-300 relative overflow-hidden">
+            {/* Glassmorphism overlay */}
+            <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-transparent to-primary/5 rounded-2xl"></div>
+            <div className="relative z-10">
             <div className="flex items-center justify-center gap-3 mb-4">
               <motion.div
                 animate={{ rotate: 360 }}
@@ -127,6 +131,7 @@ export default function CredibilitySection() {
               <span className="bg-gradient-to-r from-destructive to-primary bg-clip-text text-transparent">resultados</span>
               <span className="text-foreground">.</span>
             </p>
+            </div>
           </div>
         </motion.div>
       </div>

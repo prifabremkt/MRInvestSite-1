@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import GeometricBackground from "@/components/GeometricBackground";
+import GeometricTextures from "@/components/GeometricTextures";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
 import BlogIndex from "@/pages/blog/index";
@@ -31,6 +32,7 @@ function App() {
       <ThemeProvider defaultTheme="dark">
         <TooltipProvider>
           <GeometricBackground />
+          <GeometricTextures />
           <div className="relative z-10">
             <Toaster />
             <Router />
