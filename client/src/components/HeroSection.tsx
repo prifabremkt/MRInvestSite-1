@@ -55,7 +55,7 @@ export default function HeroSection() {
           >
             <Button 
               size="lg" 
-              className="bg-gradient-to-r from-primary to-destructive text-white px-10 py-4 text-lg font-semibold shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105"
+              className="bg-gradient-to-r from-primary to-destructive text-white"
               data-testid="button-cta-hero"
             >
               Quero acesso às oportunidades
@@ -63,7 +63,7 @@ export default function HeroSection() {
             <Button 
               size="lg" 
               variant="outline"
-              className="border-white/30 text-white bg-white/10 backdrop-blur-sm px-8 py-4 text-lg font-semibold hover:bg-white/20 transition-all duration-300"
+              className="border-white/30 text-white bg-white/10 backdrop-blur-sm"
               data-testid="button-secondary-hero"
             >
               Saiba mais

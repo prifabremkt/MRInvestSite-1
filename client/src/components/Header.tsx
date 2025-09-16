@@ -66,7 +66,7 @@ export default function Header() {
         
         <Button 
           size="sm"
-          className="bg-gradient-to-r from-primary to-destructive text-white font-medium px-6 hover:opacity-90 transition-opacity"
+          className="bg-gradient-to-r from-primary to-destructive text-white font-medium"
           data-testid="button-cta-header"
         >
           Quero Investir
