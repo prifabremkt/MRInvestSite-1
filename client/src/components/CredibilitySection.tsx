@@ -70,7 +70,7 @@ export default function CredibilitySection() {
             >
               {/* Premium Glassmorphism card com gradient border */}
               <div className="p-[1px] bg-gradient-to-br from-primary/40 to-destructive/40 rounded-2xl backdrop-blur-sm shadow-2xl">
-                <div className="bg-background/80 backdrop-blur-md rounded-2xl p-8 h-full border border-white/10 shadow-xl hover:bg-background/90 hover:border-white/20 hover:shadow-2xl transition-all duration-500 group-hover:backdrop-blur-lg">
+                <div className="bg-background/90 backdrop-blur-md rounded-2xl p-8 h-full border border-white/20 shadow-2xl transition-all duration-500 group-hover:backdrop-blur-lg">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}

@@ -68,7 +68,7 @@ export default function ProjectsSection() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-gray-900 border border-gray-700 hover-elevate transition-all duration-300 group cursor-pointer" data-testid={`card-project-${index}`}>
+              <Card className="bg-gray-800/90 border border-gray-600/80 backdrop-blur-sm shadow-lg hover-elevate transition-all duration-300 group cursor-pointer" data-testid={`card-project-${index}`}>
                 <div className="relative">
                   <img 
                     src={project.image}
@@ -83,7 +83,7 @@ export default function ProjectsSection() {
                   </div>
                 </div>
                 
-                <CardContent className="p-4 text-white bg-gray-900">
+                <CardContent className="p-4 text-white bg-gray-800/90 backdrop-blur-sm">
                   <h3 className="text-lg font-bold mb-2" data-testid={`text-project-title-${index}`}>
                     {project.title}
                   </h3>
