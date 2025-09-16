@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function FinalCTASection() {
   return (
-    <section className="py-24 bg-gradient-to-r from-primary via-primary to-destructive">
+    <section className="py-24 bg-white">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -12,10 +12,10 @@ export default function FinalCTASection() {
           viewport={{ once: true }}
           className="text-center max-w-4xl mx-auto"
         >
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins text-white mb-6" data-testid="text-final-cta-title">
+          <h2 className="text-3xl md:text-4xl font-bold font-poppins text-foreground mb-6" data-testid="text-final-cta-title">
             Pronto para investir no seu futuro? O próximo movimento é seu.
           </h2>
-          <p className="text-xl text-white/90 mb-8 leading-relaxed" data-testid="text-final-cta-subtitle">
+          <p className="text-xl text-muted-foreground mb-8 leading-relaxed" data-testid="text-final-cta-subtitle">
             Junte-se a investidores que já transformaram seus ativos em patrimônio sólido nos EUA.
           </p>
           
@@ -27,7 +27,7 @@ export default function FinalCTASection() {
           >
             <Button 
               size="lg" 
-              className="bg-white text-primary hover:bg-white/90 px-12 py-6 text-xl font-semibold shadow-xl"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 px-12 py-6 text-xl font-semibold shadow-xl"
               data-testid="button-final-cta"
             >
               Receber Apresentação Exclusiva

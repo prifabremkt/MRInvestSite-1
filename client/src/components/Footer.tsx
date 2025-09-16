@@ -1,3 +1,5 @@
+import { Phone, Mail } from "lucide-react";
+
 export default function Footer() {
   return (
     <footer className="bg-black text-white py-16">
@@ -20,8 +22,14 @@ export default function Footer() {
               Contato
             </h3>
             <div className="space-y-2 text-gray-300">
-              <p data-testid="text-footer-phone">📞 +55 (11) 99999-9999</p>
-              <p data-testid="text-footer-email">✉️ contato@mrinvest.com.br</p>
+              <div className="flex items-center gap-2" data-testid="text-footer-phone">
+                <Phone className="w-4 h-4" />
+                +55 (11) 99999-9999
+              </div>
+              <div className="flex items-center gap-2" data-testid="text-footer-email">
+                <Mail className="w-4 h-4" />
+                contato@mrinvest.com.br
+              </div>
             </div>
           </div>
           

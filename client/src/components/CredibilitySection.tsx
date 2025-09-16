@@ -1,20 +1,21 @@
 import { motion } from "framer-motion";
+import { DollarSign, Users, TrendingUp, ArrowRight } from "lucide-react";
 
 const metrics = [
   {
     value: "R$ 50 milhões",
     label: "já investidos",
-    icon: "💰"
+    icon: DollarSign
   },
   {
     value: "150+",
     label: "investidores ativos", 
-    icon: "👥"
+    icon: Users
   },
   {
     value: "22% ao ano",
     label: "rentabilidade média",
-    icon: "📈"
+    icon: TrendingUp
   }
 ];
 
@@ -44,7 +45,9 @@ export default function CredibilitySection() {
                 className="text-center"
                 data-testid={`metric-${index}`}
               >
-                <div className="text-4xl mb-4">{metric.icon}</div>
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-destructive rounded-xl flex items-center justify-center mb-4">
+                  <metric.icon className="w-6 h-6 text-white" />
+                </div>
                 <div className="text-3xl md:text-4xl font-bold text-primary mb-2" data-testid={`text-metric-value-${index}`}>
                   {metric.value}
                 </div>
@@ -62,9 +65,12 @@ export default function CredibilitySection() {
             viewport={{ once: true }}
             className="bg-gradient-to-r from-primary/10 to-destructive/10 rounded-xl p-8 max-w-3xl mx-auto"
           >
-            <p className="text-xl font-semibold text-foreground" data-testid="text-credibility-statement">
-              👉 MRInvest não vende promessas. Entregamos resultados.
-            </p>
+            <div className="flex items-center justify-center gap-3">
+              <ArrowRight className="w-6 h-6 text-primary flex-shrink-0" />
+              <p className="text-xl font-semibold text-foreground" data-testid="text-credibility-statement">
+                MRInvest não vende promessas. Entregamos resultados.
+              </p>
+            </div>
           </motion.div>
         </motion.div>
       </div>

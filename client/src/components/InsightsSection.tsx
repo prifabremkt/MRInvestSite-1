@@ -1,6 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { TrendingUp } from "lucide-react";
 
 // Todo: remove mock functionality - replace with real blog data
 const insights = [
@@ -52,7 +53,7 @@ export default function InsightsSection() {
               <Card className="h-full hover-elevate transition-all duration-300 cursor-pointer group" data-testid={`card-insight-${index}`}>
                 <CardContent className="p-6">
                   <div className="h-32 bg-gradient-to-br from-primary/10 to-destructive/10 rounded-lg mb-6 flex items-center justify-center group-hover:from-primary/20 group-hover:to-destructive/20 transition-all duration-300">
-                    <span className="text-3xl">📈</span>
+                    <TrendingUp className="w-8 h-8 text-primary" />
                   </div>
                   <h3 className="text-lg font-semibold text-foreground mb-3 line-clamp-2" data-testid={`text-insight-title-${index}`}>
                     {insight.title}
