@@ -28,8 +28,13 @@ export default function EbookSection() {
             viewport={{ once: true }}
             className="bg-card border border-border/30 rounded-xl p-8 mb-8 max-w-2xl mx-auto hover-elevate transition-all duration-300"
           >
-            <div className="w-16 h-16 bg-gradient-to-br from-primary to-destructive rounded-xl flex items-center justify-center mx-auto mb-6">
-              <BookOpen className="w-8 h-8 text-white" />
+            <div className="w-24 h-24 mx-auto mb-6 flex items-center justify-center">
+              <img 
+                src="https://i.imgur.com/5pAW239.png" 
+                alt="Guia de Investimentos nos EUA" 
+                className="w-full h-full object-contain bg-transparent"
+                data-testid="img-ebook-cover"
+              />
             </div>
             <h3 className="text-xl font-semibold text-foreground mb-6" data-testid="text-ebook-content-title">
               Guia Estratégico de Investimentos Imobiliários nos EUA
