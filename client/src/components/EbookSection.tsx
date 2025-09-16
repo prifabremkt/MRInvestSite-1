@@ -16,9 +16,9 @@ export default function EbookSection() {
             className="relative md:justify-self-end order-2 md:order-1"
           >
             <img 
-              src="https://i.imgur.com/59ioLSv.png" 
+              src="https://i.imgur.com/s9kaDnS.png" 
               alt="Guia de Investimentos nos EUA" 
-              className="w-full h-auto object-contain max-w-lg mx-auto"
+              className="w-full h-auto object-contain max-w-2xl mx-auto"
               style={{
                 background: 'transparent !important',
                 backgroundColor: 'transparent !important'
