@@ -40,7 +40,7 @@ export default function AboutSection() {
                   <img 
                     src="https://i.imgur.com/Nbk5NGu.jpeg" 
                     alt="Michel Pires e William Martinelli - Fundadores da MRInvest" 
-                    className="w-full aspect-[4/3] object-cover rounded-xl shadow-lg"
+                    className="w-full aspect-[4/3] object-cover object-top rounded-xl shadow-lg"
                     data-testid="img-founders"
                   />
                 </div>

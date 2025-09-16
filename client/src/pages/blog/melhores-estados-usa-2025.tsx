@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Clock, TrendingUp, Shield, DollarSign, MapPin } from "lucide-react";
 import { Link } from "wouter";
 import { useEffect } from "react";
+import usStatesHeroImage from "@assets/generated_images/US_states_real_estate_map_d375a698.png";
 
 export default function MelhoresEstadosUSA2025() {
   useEffect(() => {
@@ -86,11 +87,34 @@ export default function MelhoresEstadosUSA2025() {
         </div>
       </motion.section>
 
+      {/* Hero Image */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="py-8"
+      >
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <img 
+              src={usStatesHeroImage}
+              alt="Mapa dos Estados Unidos destacando os melhores estados para investimento imobiliário em 2025"
+              className="w-full rounded-xl shadow-lg"
+              loading="lazy"
+              data-testid="img-article-hero"
+            />
+            <p className="text-center text-sm text-muted-foreground mt-4 italic">
+              Estados promissores para investimento imobiliário em 2025
+            </p>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Article Content */}
       <motion.main 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
         className="py-16"
       >
         <div className="container mx-auto px-6">

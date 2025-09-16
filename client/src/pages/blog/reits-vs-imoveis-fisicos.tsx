@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Clock, TrendingUp, Building, PieChart, DollarSign, Shield, Zap, BarChart } from "lucide-react";
 import { Link } from "wouter";
 import { useEffect } from "react";
+import reitsVsPropertiesHeroImage from "@assets/generated_images/REITs_vs_physical_properties_71fa553b.png";
 
 export default function REITsVsImoveisFisicos() {
   useEffect(() => {
@@ -86,11 +87,34 @@ export default function REITsVsImoveisFisicos() {
         </div>
       </motion.section>
 
+      {/* Hero Image */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="py-8"
+      >
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <img 
+              src={reitsVsPropertiesHeroImage}
+              alt="Comparativo entre REITs e imóveis físicos para investidores brasileiros"
+              className="w-full rounded-xl shadow-lg"
+              loading="lazy"
+              data-testid="img-article-hero"
+            />
+            <p className="text-center text-sm text-muted-foreground mt-4 italic">
+              Comparativo entre estratégias de investimento imobiliário
+            </p>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Article Content */}
       <motion.main 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
         className="py-16"
       >
         <div className="container mx-auto px-6">

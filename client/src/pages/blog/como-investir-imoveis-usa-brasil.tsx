@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Calendar, Clock, Globe, Shield, DollarSign, MapPin, FileText, BarChart } from "lucide-react";
 import { Link } from "wouter";
 import { useEffect } from "react";
+import brazilUsaHeroImage from "@assets/generated_images/Brazil_USA_investment_connection_6548bcae.png";
 
 export default function ComoInvestirImoveisUSABrasil() {
   useEffect(() => {
@@ -86,11 +87,34 @@ export default function ComoInvestirImoveisUSABrasil() {
         </div>
       </motion.section>
 
+      {/* Hero Image */}
+      <motion.section
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+        className="py-8"
+      >
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <img 
+              src={brazilUsaHeroImage}
+              alt="Conexão entre Brasil e Estados Unidos para investimentos imobiliários"
+              className="w-full rounded-xl shadow-lg"
+              loading="lazy"
+              data-testid="img-article-hero"
+            />
+            <p className="text-center text-sm text-muted-foreground mt-4 italic">
+              Investindo em imóveis americanos a partir do Brasil
+            </p>
+          </div>
+        </div>
+      </motion.section>
+
       {/* Article Content */}
       <motion.main 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0.2 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
         className="py-16"
       >
         <div className="container mx-auto px-6">

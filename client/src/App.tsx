@@ -6,6 +6,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/not-found";
+import BlogIndex from "@/pages/blog/index";
 import MelhoresEstadosUSA2025 from "@/pages/blog/melhores-estados-usa-2025";
 import ComoInvestirImoveisUSABrasil from "@/pages/blog/como-investir-imoveis-usa-brasil";
 import REITsVsImoveisFisicos from "@/pages/blog/reits-vs-imoveis-fisicos";
@@ -14,6 +15,7 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
+      <Route path="/blog" component={BlogIndex} />
       <Route path="/blog/melhores-estados-usa-2025" component={MelhoresEstadosUSA2025} />
       <Route path="/blog/como-investir-imoveis-usa-brasil" component={ComoInvestirImoveisUSABrasil} />
       <Route path="/blog/reits-vs-imoveis-fisicos" component={REITsVsImoveisFisicos} />

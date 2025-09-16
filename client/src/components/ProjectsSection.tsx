@@ -2,41 +2,38 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { MapPin } from "lucide-react";
-import luxuryProperty from "@assets/generated_images/Luxury_US_real_estate_a2a4eb62.png";
-import residentialComplex from "@assets/generated_images/Premium_residential_complex_6830eebd.png";
-import commercialBuilding from "@assets/generated_images/Commercial_office_building_446d487c.png";
 
 const projects = [
   {
-    image: luxuryProperty,
-    title: "Miami Waterfront",
-    location: "Miami, FL - EUA",
+    image: "https://mrinvest.us/wp-content/uploads/brizy/imgs/Port-Charlot-home-319x239x0x14x319x210x1755773758.jpg",
+    title: "Residential Port Charlotte",
+    location: "Ocean Channel - FL",
+    roiAnual: "18%",
+    prazo: "45 dias",
+    progressoCaptacao: 78,
+    investimentoMinimo: "USD 85.000",
+    tag: "Disponível",
+    tagColor: "bg-green-600"
+  },
+  {
+    image: "https://mrinvest.us/wp-content/uploads/2025/08/Strip-mall.jpg",
+    title: "Commercial Strip Mall",
+    location: "Davenport - FL", 
     roiAnual: "22%",
     prazo: "30 dias",
     progressoCaptacao: 85,
-    investimentoMinimo: "USD 100.000",
-    tag: "Disponível",
-    tagColor: "bg-green-600"
-  },
-  {
-    image: residentialComplex,
-    title: "Manhattan Premium",
-    location: "Nova York, NY - EUA", 
-    roiAnual: "18%",
-    prazo: "45 dias",
-    progressoCaptacao: 62,
-    investimentoMinimo: "USD 150.000",
-    tag: "Disponível",
-    tagColor: "bg-green-600"
-  },
-  {
-    image: commercialBuilding,
-    title: "Los Angeles Hills",
-    location: "Los Angeles, CA - EUA",
-    roiAnual: "20%",
-    prazo: "15 dias",
-    progressoCaptacao: 94,
     investimentoMinimo: "USD 120.000",
+    tag: "Disponível",
+    tagColor: "bg-green-600"
+  },
+  {
+    image: "https://mrinvest.us/wp-content/uploads/brizy/imgs/Warehouses-320x213x0x1x320x211x1755773761.jpg",
+    title: "Industrial I (Gatorade)",
+    location: "17-92 Corridor - FL",
+    roiAnual: "25%",
+    prazo: "60 dias",
+    progressoCaptacao: 92,
+    investimentoMinimo: "USD 200.000",
     tag: "Últimas Vagas",
     tagColor: "bg-red-600"
   }
@@ -71,7 +68,7 @@ export default function ProjectsSection() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="bg-gray-900 border border-gray-700 hover-elevate transition-all duration-300 group cursor-pointer overflow-hidden" data-testid={`card-project-${index}`}>
+              <Card className="bg-gray-900 border border-gray-700 hover-elevate transition-all duration-300 group cursor-pointer" data-testid={`card-project-${index}`}>
                 <div className="relative">
                   <img 
                     src={project.image}

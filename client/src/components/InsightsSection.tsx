@@ -88,7 +88,7 @@ export default function InsightsSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          <Link href="/blog/melhores-estados-usa-2025">
+          <Link href="/blog">
             <Button 
               size="lg" 
               variant="outline"
