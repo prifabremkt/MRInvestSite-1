@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
-import ebookCover from "@assets/image_1758047665556.png";
 
 export default function EbookSection() {
   return (
@@ -18,7 +17,7 @@ export default function EbookSection() {
           >
             <div className="relative max-w-lg mx-auto">
               <img 
-                src={ebookCover} 
+                src="https://i.imgur.com/59ioLSv.png" 
                 alt="Guia de Investimentos nos EUA" 
                 className="w-full h-auto object-contain bg-transparent mix-blend-screen dark:mix-blend-screen brightness-110 contrast-105"
                 data-testid="img-ebook-cover"
