@@ -7,50 +7,88 @@ function TypingEffect({ texts, speed = 100, delay = 0 }: { texts: string[]; spee
   const [displayText, setDisplayText] = useState("");
   const [currentTextIndex, setCurrentTextIndex] = useState(0);
   const [showCursor, setShowCursor] = useState(true);
+  const [isTyping, setIsTyping] = useState(true);
 
   useEffect(() => {
     if (!texts || texts.length === 0) return;
 
+    let cursorInterval: NodeJS.Timeout;
+    let typeTimeout: NodeJS.Timeout;
+    let pauseTimeout: NodeJS.Timeout;
+    let isMounted = true;
+
     // Cursor blinking effect
-    const cursorInterval = setInterval(() => {
-      setShowCursor(prev => !prev);
+    cursorInterval = setInterval(() => {
+      if (isMounted) {
+        setShowCursor(prev => !prev);
+      }
     }, 500);
 
-    const startTyping = () => {
-      let currentIndex = 0;
-      const currentText = texts[currentTextIndex];
+    const typeText = () => {
+      if (!isMounted) return;
       
+      const currentText = texts[currentTextIndex];
       if (!currentText) return;
       
-      const typeInterval = setInterval(() => {
-        if (currentIndex < currentText.length) {
-          setDisplayText(currentText.slice(0, currentIndex + 1));
-          currentIndex++;
+      setIsTyping(true);
+      let charIndex = 0;
+
+      const typeNextChar = () => {
+        if (!isMounted) return;
+        
+        if (charIndex < currentText.length) {
+          setDisplayText(currentText.slice(0, charIndex + 1));
+          charIndex++;
+          typeTimeout = setTimeout(typeNextChar, speed);
         } else {
-          clearInterval(typeInterval);
-          // Start deleting after 2 seconds
-          setTimeout(() => {
-            const deleteInterval = setInterval(() => {
-              if (currentIndex > 0) {
-                currentIndex--;
-                setDisplayText(currentText.slice(0, currentIndex));
-              } else {
-                clearInterval(deleteInterval);
-                // Move to next text
-                setCurrentTextIndex((prev) => (prev + 1) % texts.length);
-                setTimeout(startTyping, 500); // Restart typing after 0.5s
-              }
-            }, speed / 2);
+          // Finished typing, wait then start deleting
+          pauseTimeout = setTimeout(() => {
+            if (!isMounted) return;
+            deleteText();
           }, 2000);
         }
-      }, speed);
+      };
+
+      typeTimeout = setTimeout(typeNextChar, delay);
     };
 
-    const initialDelay = setTimeout(startTyping, delay);
-    
+    const deleteText = () => {
+      if (!isMounted) return;
+      
+      const currentText = texts[currentTextIndex];
+      if (!currentText) return;
+      
+      setIsTyping(false);
+      let charIndex = currentText.length;
+
+      const deleteNextChar = () => {
+        if (!isMounted) return;
+        
+        if (charIndex > 0) {
+          charIndex--;
+          setDisplayText(currentText.slice(0, charIndex));
+          typeTimeout = setTimeout(deleteNextChar, speed / 2);
+        } else {
+          // Finished deleting, move to next text
+          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+          pauseTimeout = setTimeout(() => {
+            if (!isMounted) return;
+            typeText();
+          }, 500);
+        }
+      };
+
+      typeTimeout = setTimeout(deleteNextChar, speed / 2);
+    };
+
+    // Start the typing effect
+    typeText();
+
     return () => {
-      clearTimeout(initialDelay);
+      isMounted = false;
       clearInterval(cursorInterval);
+      clearTimeout(typeTimeout);
+      clearTimeout(pauseTimeout);
     };
   }, [currentTextIndex, texts, speed, delay]);
 
