@@ -43,7 +43,7 @@ export default function WhyChooseSection() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="text-left mb-16"
+          className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2" data-testid="text-why-choose-title">
             Alguns dos benefícios que

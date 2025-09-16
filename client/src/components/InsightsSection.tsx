@@ -3,6 +3,9 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { TrendingUp, MapPin, Globe, PieChart } from "lucide-react";
 import { Link } from "wouter";
+import usStatesImage from "@assets/generated_images/US_states_real_estate_map_d375a698.png";
+import brazilUsaImage from "@assets/generated_images/Brazil_USA_investment_connection_6548bcae.png";
+import reitsVsPropertiesImage from "@assets/generated_images/REITs_vs_physical_properties_71fa553b.png";
 
 const insights = [
   {
@@ -10,21 +13,24 @@ const insights = [
     summary: "Análise completa dos estados mais promissores para investimento imobiliário, considerando rentabilidade, segurança jurídica e valorização patrimonial.",
     readTime: "8 min de leitura",
     link: "/blog/melhores-estados-usa-2025",
-    icon: MapPin
+    icon: MapPin,
+    image: usStatesImage
   },
   {
     title: "Como investir em imóveis nos EUA morando no Brasil?",
     summary: "Guia completo sobre estrutura legal, financiamento, câmbio e gestão remota para brasileiros que desejam investir no mercado americano.",
     readTime: "12 min de leitura",
     link: "/blog/como-investir-imoveis-usa-brasil",
-    icon: Globe
+    icon: Globe,
+    image: brazilUsaImage
   },
   {
     title: "REITs ou imóveis físicos: qual o melhor para brasileiros?",
     summary: "Comparativo detalhado entre fundos imobiliários e propriedades físicas, mostrando vantagens, desvantagens e exemplos práticos de cada estratégia.",
     readTime: "10 min de leitura",
     link: "/blog/reits-vs-imoveis-fisicos",
-    icon: PieChart
+    icon: PieChart,
+    image: reitsVsPropertiesImage
   }
 ];
 
@@ -60,10 +66,22 @@ export default function InsightsSection() {
               >
                 <Link href={insight.link}>
                   <Card className="h-full hover-elevate transition-all duration-300 cursor-pointer group" data-testid={`card-insight-${index}`}>
-                    <CardContent className="p-6">
-                      <div className="h-32 bg-gradient-to-br from-primary/10 to-destructive/10 rounded-lg mb-6 flex items-center justify-center group-hover:from-primary/20 group-hover:to-destructive/20 transition-all duration-300">
-                        <IconComponent className="w-8 h-8 text-primary" />
+                    {/* Cover Image */}
+                    <div className="relative">
+                      <img 
+                        src={insight.image}
+                        alt={insight.title}
+                        className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                        data-testid={`img-insight-${index}`}
+                      />
+                      <div className="absolute top-4 left-4">
+                        <div className="w-10 h-10 bg-white/90 backdrop-blur-sm rounded-lg flex items-center justify-center">
+                          <IconComponent className="w-5 h-5 text-primary" />
+                        </div>
                       </div>
+                    </div>
+                    
+                    <CardContent className="p-6">
                       <h3 className="text-lg font-semibold text-foreground mb-3 line-clamp-2" data-testid={`text-insight-title-${index}`}>
                         {insight.title}
                       </h3>

@@ -7,11 +7,13 @@ export default function Footer() {
         <div className="grid md:grid-cols-6 gap-8 mb-12">
           {/* Logo e Descrição */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-6">
-              <div className="w-8 h-8 bg-primary rounded flex items-center justify-center">
-                <span className="text-white font-bold text-sm">MR</span>
-              </div>
-              <span className="text-primary font-bold text-xl" data-testid="logo-footer">MRInvest</span>
+            <div className="flex items-center mb-6">
+              <img 
+                src="https://i.imgur.com/YLrPJJW.png" 
+                alt="MRInvest Logo" 
+                className="h-7 w-auto brightness-0 invert"
+                data-testid="logo-footer"
+              />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed mb-6" data-testid="text-footer-description">
               <span className="font-semibold">Real Estate. Real Results.</span><br />

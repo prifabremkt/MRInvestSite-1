@@ -545,9 +545,11 @@ export default function ComoInvestirImoveisUSABrasil() {
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                   Se você quer investir em imóveis nos EUA com segurança, nossa empresa está pronta para ajudar em cada detalhe: da escolha do imóvel à gestão remota completa.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-primary to-destructive text-white" data-testid="button-cta-contact">
-                  Entre em contato e transforme esse plano em realidade
-                </Button>
+                <a href="https://wa.me/14074709867" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-gradient-to-r from-primary to-destructive text-white" data-testid="button-cta-contact">
+                    Entre em contato e transforme esse plano em realidade
+                  </Button>
+                </a>
               </section>
             </div>
           </div>

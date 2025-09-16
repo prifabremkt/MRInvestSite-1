@@ -378,9 +378,11 @@ export default function MelhoresEstadosUSA2025() {
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                   Se você está pensando em investir em imóveis nos EUA e quer fazer isso com segurança e rentabilidade, nossa empresa pode te ajudar em cada etapa — desde a seleção do imóvel até a gestão completa.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-primary to-destructive text-white" data-testid="button-cta-contact">
-                  Entre em contato para consultoria personalizada
-                </Button>
+                <a href="https://wa.me/14074709867" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-gradient-to-r from-primary to-destructive text-white" data-testid="button-cta-contact">
+                    Entre em contato para consultoria personalizada
+                  </Button>
+                </a>
               </section>
             </div>
           </div>

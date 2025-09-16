@@ -540,9 +540,11 @@ export default function REITsVsImoveisFisicos() {
                 <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
                   Quer saber como dar o próximo passo e investir em imóveis nos EUA com segurança, mesmo morando no Brasil? Nossa empresa acompanha você em todas as etapas — da escolha do imóvel à gestão completa.
                 </p>
-                <Button size="lg" className="bg-gradient-to-r from-primary to-destructive text-white" data-testid="button-cta-contact">
-                  Fale conosco e descubra como transformar esse projeto em realidade
-                </Button>
+                <a href="https://wa.me/14074709867" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="bg-gradient-to-r from-primary to-destructive text-white" data-testid="button-cta-contact">
+                    Fale conosco e descubra como transformar esse projeto em realidade
+                  </Button>
+                </a>
               </section>
             </div>
           </div>

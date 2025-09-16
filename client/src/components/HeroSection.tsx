@@ -159,13 +159,15 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="flex justify-center"
           >
-            <Button 
-              size="lg" 
-              className="bg-gradient-to-r from-primary to-destructive text-white px-8 py-3 text-lg font-semibold"
-              data-testid="button-cta-hero"
-            >
-              Descobrir oportunidades
-            </Button>
+            <a href="#projetos">
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-primary to-destructive text-white px-8 py-3 text-lg font-semibold"
+                data-testid="button-cta-hero"
+              >
+                Descobrir oportunidades
+              </Button>
+            </a>
           </motion.div>
         </motion.div>
       </div>
