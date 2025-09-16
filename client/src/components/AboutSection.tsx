@@ -31,20 +31,20 @@ export default function AboutSection() {
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto"
+          className="max-w-5xl mx-auto"
         >
           <Card className="bg-card/50 backdrop-blur-sm border border-border/50 shadow-xl hover-elevate transition-all duration-300">
             <CardContent className="p-12">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div>
+              <div className="grid md:grid-cols-5 gap-12 items-center">
+                <div className="col-span-3">
                   <img 
                     src="https://i.imgur.com/Nbk5NGu.jpeg" 
                     alt="Michel Pires e William Martinelli - Fundadores da MRInvest" 
-                    className="w-full aspect-square object-cover rounded-xl shadow-lg"
+                    className="w-full aspect-[4/3] object-cover rounded-xl shadow-lg"
                     data-testid="img-founders"
                   />
                 </div>
-                <div className="text-center md:text-left">
+                <div className="col-span-2 text-center md:text-left">
                   <h3 className="text-2xl font-semibold text-foreground mb-6" data-testid="text-founders-title">
                     Nossos Fundadores
                   </h3>

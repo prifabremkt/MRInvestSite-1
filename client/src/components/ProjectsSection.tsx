@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
-import { MapPin, TrendingUp } from "lucide-react";
+import { MapPin } from "lucide-react";
 import luxuryProperty from "@assets/generated_images/Luxury_US_real_estate_a2a4eb62.png";
 import residentialComplex from "@assets/generated_images/Premium_residential_complex_6830eebd.png";
 import commercialBuilding from "@assets/generated_images/Commercial_office_building_446d487c.png";
@@ -9,30 +9,36 @@ import commercialBuilding from "@assets/generated_images/Commercial_office_build
 const projects = [
   {
     image: luxuryProperty,
-    title: "Luxury Residential Tower",
-    subtitle: "Miami",
-    location: "Miami, FL",
-    roi: "24% ao ano",
-    type: "Residencial de Alto Padrão",
-    investment: "A partir de $250k"
+    title: "Miami Waterfront",
+    location: "Miami, FL - EUA",
+    roiAnual: "22%",
+    prazo: "30 dias",
+    progressoCaptacao: 85,
+    investimentoMinimo: "USD 100.000",
+    tag: "Disponível",
+    tagColor: "bg-green-600"
   },
   {
     image: residentialComplex,
-    title: "Premium Apartment Complex",
-    subtitle: "Orlando", 
-    location: "Orlando, FL", 
-    roi: "22% ao ano",
-    type: "Complexo Residencial",
-    investment: "A partir de $180k"
+    title: "Manhattan Premium",
+    location: "Nova York, NY - EUA", 
+    roiAnual: "18%",
+    prazo: "45 dias",
+    progressoCaptacao: 62,
+    investimentoMinimo: "USD 150.000",
+    tag: "Disponível",
+    tagColor: "bg-green-600"
   },
   {
     image: commercialBuilding,
-    title: "Corporate Office Building",
-    subtitle: "Tampa",
-    location: "Tampa, FL",
-    roi: "26% ao ano", 
-    type: "Comercial Premium",
-    investment: "A partir de $400k"
+    title: "Los Angeles Hills",
+    location: "Los Angeles, CA - EUA",
+    roiAnual: "20%",
+    prazo: "15 dias",
+    progressoCaptacao: 94,
+    investimentoMinimo: "USD 120.000",
+    tag: "Últimas Vagas",
+    tagColor: "bg-red-600"
   }
 ];
 
@@ -65,47 +71,72 @@ export default function ProjectsSection() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className="border border-border/30 bg-card/50 backdrop-blur-sm hover-elevate transition-all duration-300 group cursor-pointer" data-testid={`card-project-${index}`}>
-                <div className="relative overflow-hidden rounded-t-lg">
+              <Card className="bg-gray-900 border border-gray-700 hover-elevate transition-all duration-300 group cursor-pointer overflow-hidden" data-testid={`card-project-${index}`}>
+                <div className="relative">
                   <img 
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-48 object-cover"
                     data-testid={`img-project-${index}`}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300" />
-                  <div className="absolute top-4 right-4">
-                    <span className="bg-gradient-to-r from-primary to-destructive text-white px-3 py-1 rounded-full text-sm font-semibold shadow-lg" data-testid={`text-project-roi-${index}`}>
-                      {project.roi}
+                  <div className="absolute top-3 left-3">
+                    <span className={`${project.tagColor} text-white px-2 py-1 rounded text-xs font-medium`}>
+                      {project.tag}
                     </span>
                   </div>
-                  <div className="absolute bottom-4 left-4 text-white">
-                    <h3 className="text-xl font-bold mb-1" data-testid={`text-project-title-${index}`}>
-                      {project.title}
-                    </h3>
-                    <div className="flex items-center gap-1 text-sm">
-                      <MapPin className="w-3 h-3" />
-                      <span data-testid={`text-project-location-${index}`}>{project.subtitle}</span>
-                    </div>
-                  </div>
                 </div>
-                <CardContent className="p-6">
-                  <div className="space-y-4">
-                    <div className="flex justify-between items-center">
-                      <span className="text-sm text-foreground/60 font-medium" data-testid={`text-project-type-${index}`}>
-                        {project.type}
-                      </span>
-                      <div className="flex items-center gap-1 text-primary">
-                        <TrendingUp className="w-4 h-4" />
-                        <span className="text-sm font-semibold">Alto ROI</span>
+                
+                <CardContent className="p-4 text-white bg-gray-900">
+                  <h3 className="text-lg font-bold mb-2" data-testid={`text-project-title-${index}`}>
+                    {project.title}
+                  </h3>
+                  
+                  <div className="flex items-center gap-1 text-gray-300 text-sm mb-4">
+                    <MapPin className="w-3 h-3" />
+                    <span data-testid={`text-project-location-${index}`}>{project.location}</span>
+                  </div>
+                  
+                  <div className="grid grid-cols-2 gap-4 mb-4 text-sm">
+                    <div>
+                      <div className="text-gray-400 mb-1">ROI Anual</div>
+                      <div className="text-white font-semibold text-lg" data-testid={`text-project-roi-${index}`}>
+                        {project.roiAnual}
                       </div>
                     </div>
-                    <div className="pt-2 border-t border-border/30">
-                      <span className="text-sm font-semibold text-foreground">
-                        {project.investment}
-                      </span>
+                    <div>
+                      <div className="text-gray-400 mb-1">Prazo</div>
+                      <div className="text-white font-semibold" data-testid={`text-project-prazo-${index}`}>
+                        {project.prazo}
+                      </div>
                     </div>
                   </div>
+                  
+                  <div className="mb-4">
+                    <div className="flex justify-between text-sm mb-2">
+                      <span className="text-gray-400">Progresso da Captação</span>
+                      <span className="text-white font-semibold">{project.progressoCaptacao}%</span>
+                    </div>
+                    <div className="w-full bg-gray-700 rounded-full h-2">
+                      <div 
+                        className="bg-orange-500 h-2 rounded-full transition-all duration-300"
+                        style={{ width: `${project.progressoCaptacao}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                  
+                  <div className="mb-4 pb-4 border-b border-gray-700">
+                    <div className="text-gray-400 text-sm">Investimento mínimo:</div>
+                    <div className="text-white font-semibold" data-testid={`text-project-investment-${index}`}>
+                      {project.investimentoMinimo}
+                    </div>
+                  </div>
+                  
+                  <Button 
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white font-medium"
+                    data-testid={`button-project-${index}`}
+                  >
+                    Baixar apresentação
+                  </Button>
                 </CardContent>
               </Card>
             </motion.div>

@@ -1,4 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
 import { motion } from "framer-motion";
 import { CheckCircle, Clock, Users, MapPin, DollarSign, MonitorCheck } from "lucide-react";
 
@@ -46,13 +45,16 @@ export default function WhyChooseSection() {
           viewport={{ once: true }}
           className="text-left mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6" data-testid="text-why-choose-title">
-            Alguns dos benefícios que<br />você tem com a Capital Concreto:
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-2" data-testid="text-why-choose-title">
+            Alguns dos benefícios que
+          </h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-8" data-testid="text-why-choose-subtitle">
+            você tem com a MRInvest:
           </h2>
           <div className="w-16 h-1 bg-gradient-to-r from-primary to-destructive mb-8" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {features.map((feature, index) => (
             <motion.div
               key={index}
@@ -60,26 +62,19 @@ export default function WhyChooseSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
+              className="text-center"
             >
-              <Card className="h-full border border-border/30 bg-card hover-elevate transition-all duration-300 group" data-testid={`card-feature-${index}`}>
-                <CardContent className="p-8">
-                  <div className="flex items-start gap-6">
-                    <div className="flex-shrink-0">
-                      <div className="w-14 h-14 bg-gradient-to-br from-primary to-destructive rounded-xl flex items-center justify-center shadow-lg">
-                        <feature.icon className="w-7 h-7 text-white" />
-                      </div>
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-semibold text-foreground mb-4 group-hover:text-primary transition-colors" data-testid={`text-feature-title-${index}`}>
-                        {feature.title}
-                      </h3>
-                      <p className="text-foreground/70 leading-relaxed" data-testid={`text-feature-description-${index}`}>
-                        {feature.description}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+              <div className="flex flex-col items-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-primary to-destructive rounded-xl flex items-center justify-center shadow-lg mb-6">
+                  <feature.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-foreground mb-4" data-testid={`text-feature-title-${index}`}>
+                  {feature.title}
+                </h3>
+                <p className="text-foreground/70 leading-relaxed text-sm" data-testid={`text-feature-description-${index}`}>
+                  {feature.description}
+                </p>
+              </div>
             </motion.div>
           ))}
         </div>

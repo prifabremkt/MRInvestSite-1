@@ -52,7 +52,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover object-center"
         />
         {/* Dark wash overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-black/70 via-black/60 to-black/70" />
+        <div className="absolute inset-0 bg-gradient-to-br from-black/80 via-black/75 to-black/70" />
       </div>
       
       {/* Content */}
@@ -71,17 +71,15 @@ export default function HeroSection() {
             data-testid="text-hero-headline"
           >
             Invista{" "}
-            <TypingEffect text="nos Estados Unidos" speed={150} delay={1000} />
-            <span className="block text-white mt-2">
-              com a MR Invest
-            </span>
+            <TypingEffect text="nos Estados Unidos" speed={150} delay={1000} />{" "}
+            com a MR Invest
           </motion.h1>
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed font-semibold"
+            className="text-xl md:text-2xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed font-semibold"
             data-testid="text-hero-subheadline"
           >
             Proteja seu patrimônio. Multiplique sua renda.
