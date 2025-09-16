@@ -10,6 +10,25 @@ The application is built as a modern single-page application with a focus on pre
 
 Preferred communication style: Simple, everyday language.
 
+## Recent Updates
+
+### September 2025 - UI Enhancements and WhatsApp Integration Expansion
+- **Added brand tagline**: "Seu Hub de Investimentos nos EUA" above main headline in hero section with elegant chip-style design and motion animation
+- **Refined CredibilitySection design**: Reduced oversized text and icons for better proportion, removed heavy shadows, added thin gradient borders to metric cards using gradient wrapper technique
+- **Expanded WhatsApp integration**: Updated all key CTA buttons to use WhatsApp (+1 407 470 9867) for improved lead generation:
+  - "Quero Investir" button in header navigation
+  - "Ver todas as oportunidades" button in projects section
+  - "Falar com especialista" button in blog pages
+  - "Baixar Ebook Gratuitamente" button for lead capture
+  - All blog article CTA buttons already integrated
+
+### Previous Updates
+- Completed homepage visual updates including article covers in InsightsSection and hero button linking to projects
+- Implemented WhatsApp integration for article CTA buttons and contact sections
+- Updated branding consistency with unified logo across header and footer
+- Redesigned CredibilitySection with futuristic styling, animations, and centered layout
+- Centered benefits section title for improved visual hierarchy
+
 ## System Architecture
 
 ### Frontend Architecture
