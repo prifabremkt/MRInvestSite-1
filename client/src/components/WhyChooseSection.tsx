@@ -6,32 +6,28 @@ const features = [
   {
     icon: Shield,
     title: "Segurança Jurídica Internacional",
-    description: "Estruturas legais robustas e conformes com a legislação americana e brasileira.",
-    gradient: "from-primary/20 to-primary/10"
+    description: "Estruturas legais robustas e conformes com a legislação americana e brasileira."
   },
   {
     icon: TrendingUp,
     title: "Proteção Patrimonial Completa", 
-    description: "Diversificação internacional e proteção contra instabilidades econômicas locais.",
-    gradient: "from-destructive/20 to-destructive/10"
+    description: "Diversificação internacional e proteção contra instabilidades econômicas locais."
   },
   {
     icon: Globe,
     title: "Rentabilidade Premium",
-    description: "Projetos cuidadosamente selecionados com potencial de retorno superior ao mercado.",
-    gradient: "from-primary/20 to-destructive/20"
+    description: "Projetos cuidadosamente selecionados com potencial de retorno superior ao mercado."
   },
   {
     icon: Settings,
     title: "Ecossistema 360º",
-    description: "Suporte completo desde a análise até a gestão patrimonial internacional.",
-    gradient: "from-destructive/20 to-primary/10"
+    description: "Suporte completo desde a análise até a gestão patrimonial internacional."
   }
 ];
 
 export default function WhyChooseSection() {
   return (
-    <section className="py-32 bg-card border-t border-border/30">
+    <section className="py-32 bg-background border-t border-border/50">
       <div className="container mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -58,7 +54,7 @@ export default function WhyChooseSection() {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
             >
-              <Card className={`h-full border border-border/30 bg-gradient-to-br ${feature.gradient} backdrop-blur-sm hover-elevate transition-all duration-300 group`} data-testid={`card-feature-${index}`}>
+              <Card className="h-full border border-border/30 bg-card hover-elevate transition-all duration-300 group" data-testid={`card-feature-${index}`}>
                 <CardContent className="p-8">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
