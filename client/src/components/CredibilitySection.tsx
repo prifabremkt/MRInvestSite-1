@@ -42,10 +42,10 @@ export default function CredibilitySection() {
             className="inline-block"
           >
             <div className="w-20 h-0.5 bg-gradient-to-r from-primary to-destructive mx-auto mb-8"></div>
-            <h2 className="text-4xl md:text-6xl font-bold font-poppins bg-gradient-to-r from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent mb-6" data-testid="text-credibility-title">
+            <h2 className="text-2xl md:text-4xl font-bold font-poppins bg-gradient-to-r from-foreground via-foreground to-foreground/80 bg-clip-text text-transparent mb-6" data-testid="text-credibility-title">
               Números que Comprovam
             </h2>
-            <h3 className="text-3xl md:text-5xl font-bold font-poppins bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent">
+            <h3 className="text-xl md:text-3xl font-bold font-poppins bg-gradient-to-r from-primary via-destructive to-primary bg-clip-text text-transparent">
               Nossos Resultados
             </h3>
           </motion.div>
@@ -69,7 +69,7 @@ export default function CredibilitySection() {
             >
               {/* Gradient border wrapper */}
               <div className="p-[1px] bg-gradient-to-br from-primary/30 to-destructive/30 rounded-2xl">
-                <div className="bg-background/50 backdrop-blur-sm rounded-2xl p-8 h-full">
+                <div className="bg-background/50 backdrop-blur-sm rounded-2xl p-0 h-full">
                   <motion.div
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
@@ -108,7 +108,7 @@ export default function CredibilitySection() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto"
         >
-          <div className="bg-gradient-to-r from-card/80 via-card/90 to-card/80 backdrop-blur-xl rounded-2xl p-8 border border-primary/20 relative">
+          <div className="bg-gradient-to-r from-card/80 via-card/90 to-card/80 backdrop-blur-xl rounded-2xl p-0 border border-primary/20 relative">
             <div className="flex items-center justify-center gap-3 mb-4">
               <motion.div
                 animate={{ rotate: 360 }}
