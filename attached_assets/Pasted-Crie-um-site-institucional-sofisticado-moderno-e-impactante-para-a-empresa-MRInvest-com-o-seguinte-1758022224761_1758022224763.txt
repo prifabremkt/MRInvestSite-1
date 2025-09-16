@@ -1,0 +1,153 @@
+Crie um site institucional sofisticado, moderno e impactante para a empresa MRInvest, com o seguinte briefing:
+
+Tecnologias:
+
+React + Vite + TailwindCSS
+
+Responsivo (desktop, tablet e mobile)
+
+Animações suaves com Framer Motion
+
+Headline principal com efeito digitando (react-typed)
+
+Estrutura modular e componentes reutilizáveis
+
+Identidade visual:
+
+Tema dark elegante (preto e cinza grafite como base)
+
+Menu/Header branco para contraste com a logo azul/vermelho
+
+Cor principal: azul escuro (para botões e CTAs, inspirado na logo)
+
+Cor secundária: vermelho elegante (usado em detalhes estratégicos)
+
+Uso de gradientes sofisticados (azul marinho → azul royal, preto → grafite)
+
+Tipografia moderna (Poppins, Inter)
+
+Estrutura do site:
+
+Header (menu fixo no topo)
+
+Fundo branco, logo MRInvest à esquerda
+
+Links do menu em cinza/preto com hover azul
+
+CTA destacado em azul
+
+Logo: https://i.imgur.com/YLrPJJW.png
+
+Hero Section
+
+Fundo escuro com gradiente
+
+Headline animada digitando:
+“MRInvest – Real Estate. Real Results.”
+
+Subheadline: “Invista nos Estados Unidos. Proteja seu patrimônio. Multiplique sua renda.”
+
+CTA azul: [Quero acesso às oportunidades]
+
+Sobre a MRInvest
+
+Copy fornecida
+
+Foto dos sócios (um card único com os dois juntos)
+
+Imagem sócios: https://i.imgur.com/Nbk5NGu.jpeg
+
+Por que escolher a MRInvest?
+
+4 blocos com ícones minimalistas + textos:
+
+Segurança Jurídica Internacional
+
+Proteção Patrimonial Completa
+
+Rentabilidade Premium
+
+Ecossistema 360º
+
+Projetos em Destaque
+
+Cards com imagens de imóveis + ROI (placeholders)
+
+Hover animado com gradiente azul → vermelho
+
+CTA azul: [Ver todas as oportunidades]
+
+Como Funciona
+
+Timeline em 4 etapas com ícones:
+
+Análise de Perfil
+
+Seleção de Projetos
+
+Estruturação Legal
+
+Aquisição e Gestão
+
+Insights Exclusivos (Blog)
+
+Sessão fixa com 3 artigos estratégicos (cards com imagem, título e resumo)
+
+CTA: [Ler artigos estratégicos]
+
+Ebook / Isca Digital
+
+Fundo com gradiente sofisticado (azul → preto)
+
+Headline: “Baixe nosso guia exclusivo de investimentos nos EUA”
+
+Subtexto: “Descubra como proteger e multiplicar seu patrimônio em dólar”
+
+CTA azul: [Baixar Ebook Gratuitamente]
+
+Credibilidade / Números
+
+Destaques com métricas:
+
+R$ 50 milhões já investidos
+
+150+ investidores ativos
+
+Rentabilidade média de 22% ao ano
+
+Texto de impacto: “👉 MRInvest não vende promessas. Entregamos resultados.”
+
+Call to Action final
+
+Fundo escuro com gradiente azul → vermelho
+
+Texto:
+“Pronto para investir no seu futuro? O próximo movimento é seu.”
+“Junte-se a investidores que já transformaram seus ativos em patrimônio sólido nos EUA.”
+
+CTA azul: [Receber Apresentação Exclusiva]
+
+Rodapé
+
+Logo MRInvest (azul/vermelho)
+
+Contatos (telefone, e-mail)
+
+Redes sociais
+
+Fundo preto, tipografia clean
+
+Copy oficial:
+Use exatamente a copy que forneci, sem alterações.
+
+Requisitos extras:
+
+Menu branco com hover elegante em azul
+
+Gradientes suaves em azul e vermelho em botões/destaques
+
+Cards com efeito hover animado (Framer Motion)
+
+Hero section com tipografia grande e efeito digitando
+
+Atmosfera premium e impactante
