@@ -1,6 +1,45 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 import luxuryProperty from "@assets/generated_images/Luxury_US_real_estate_a2a4eb62.png";
+
+function TypingEffect({ text, speed = 100, delay = 0 }: { text: string; speed?: number; delay?: number }) {
+  const [displayText, setDisplayText] = useState("");
+  const [isTyping, setIsTyping] = useState(false);
+
+  useEffect(() => {
+    const startTyping = () => {
+      setIsTyping(true);
+      let currentIndex = 0;
+      
+      const typeInterval = setInterval(() => {
+        if (currentIndex < text.length) {
+          setDisplayText(text.slice(0, currentIndex + 1));
+          currentIndex++;
+        } else {
+          clearInterval(typeInterval);
+          // Start deleting after 2 seconds
+          setTimeout(() => {
+            const deleteInterval = setInterval(() => {
+              if (currentIndex > 0) {
+                currentIndex--;
+                setDisplayText(text.slice(0, currentIndex));
+              } else {
+                clearInterval(deleteInterval);
+                setTimeout(startTyping, 500); // Restart typing after 0.5s
+              }
+            }, speed / 2);
+          }, 2000);
+        }
+      }, speed);
+    };
+
+    const initialDelay = setTimeout(startTyping, delay);
+    return () => clearTimeout(initialDelay);
+  }, [text, speed, delay]);
+
+  return <span className="text-primary">{displayText}</span>;
+}
 
 export default function HeroSection() {
   return (
@@ -31,9 +70,10 @@ export default function HeroSection() {
             className="text-4xl md:text-6xl font-bold font-poppins text-white mb-8 leading-tight"
             data-testid="text-hero-headline"
           >
-            A incorporadora
+            Invista{" "}
+            <TypingEffect text="nos Estados Unidos" speed={150} delay={1000} />
             <span className="block text-white mt-2">
-              do investidor
+              com a MR Invest
             </span>
           </motion.h1>
           
@@ -41,10 +81,20 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-lg md:text-xl text-white/80 mb-12 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg md:text-xl text-white/90 mb-6 max-w-3xl mx-auto leading-relaxed font-semibold"
             data-testid="text-hero-subheadline"
           >
-            Seja um sócio-investidor de grandes empreendimentos e multiplique o seu patrimônio
+            Proteja seu patrimônio. Multiplique sua renda.
+          </motion.p>
+          
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-base md:text-lg text-white/80 mb-12 max-w-4xl mx-auto leading-relaxed"
+            data-testid="text-hero-description"
+          >
+            A MRInvest conecta você, investidor brasileiro, a empreendimentos imobiliários exclusivos nos EUA — com estratégia, segurança jurídica e resultados reais.
           </motion.p>
           
           <motion.div
@@ -58,7 +108,7 @@ export default function HeroSection() {
               className="bg-gradient-to-r from-primary to-destructive text-white px-8 py-3 text-lg font-semibold"
               data-testid="button-cta-hero"
             >
-              Quero fazer parte
+              Descobrir oportunidades
             </Button>
           </motion.div>
         </motion.div>
