@@ -3,18 +3,28 @@ import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import luxuryProperty from "@assets/generated_images/Luxury_US_real_estate_a2a4eb62.png";
 
-function TypingEffect({ text, speed = 100, delay = 0 }: { text: string; speed?: number; delay?: number }) {
+function TypingEffect({ texts, speed = 100, delay = 0 }: { texts: string[]; speed?: number; delay?: number }) {
   const [displayText, setDisplayText] = useState("");
-  const [isTyping, setIsTyping] = useState(false);
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
+    if (!texts || texts.length === 0) return;
+
+    // Cursor blinking effect
+    const cursorInterval = setInterval(() => {
+      setShowCursor(prev => !prev);
+    }, 500);
+
     const startTyping = () => {
-      setIsTyping(true);
       let currentIndex = 0;
+      const currentText = texts[currentTextIndex];
+      
+      if (!currentText) return;
       
       const typeInterval = setInterval(() => {
-        if (currentIndex < text.length) {
-          setDisplayText(text.slice(0, currentIndex + 1));
+        if (currentIndex < currentText.length) {
+          setDisplayText(currentText.slice(0, currentIndex + 1));
           currentIndex++;
         } else {
           clearInterval(typeInterval);
@@ -23,9 +33,11 @@ function TypingEffect({ text, speed = 100, delay = 0 }: { text: string; speed?: 
             const deleteInterval = setInterval(() => {
               if (currentIndex > 0) {
                 currentIndex--;
-                setDisplayText(text.slice(0, currentIndex));
+                setDisplayText(currentText.slice(0, currentIndex));
               } else {
                 clearInterval(deleteInterval);
+                // Move to next text
+                setCurrentTextIndex((prev) => (prev + 1) % texts.length);
                 setTimeout(startTyping, 500); // Restart typing after 0.5s
               }
             }, speed / 2);
@@ -35,10 +47,19 @@ function TypingEffect({ text, speed = 100, delay = 0 }: { text: string; speed?: 
     };
 
     const initialDelay = setTimeout(startTyping, delay);
-    return () => clearTimeout(initialDelay);
-  }, [text, speed, delay]);
+    
+    return () => {
+      clearTimeout(initialDelay);
+      clearInterval(cursorInterval);
+    };
+  }, [currentTextIndex, texts, speed, delay]);
 
-  return <span className="text-primary">{displayText}</span>;
+  return (
+    <span className="text-primary">
+      {displayText}
+      <span className={`${showCursor ? 'opacity-100' : 'opacity-0'} transition-opacity duration-100`}>|</span>
+    </span>
+  );
 }
 
 export default function HeroSection() {
@@ -71,8 +92,7 @@ export default function HeroSection() {
             data-testid="text-hero-headline"
           >
             Invista{" "}
-            <TypingEffect text="nos Estados Unidos" speed={150} delay={1000} />{" "}
-            com a MR Invest
+            <TypingEffect texts={["nos Estados Unidos", "com a MR Invest"]} speed={150} delay={1000} />
           </motion.h1>
           
           <motion.p 
