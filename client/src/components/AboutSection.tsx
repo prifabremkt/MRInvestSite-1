@@ -39,7 +39,7 @@ export default function AboutSection() {
                 <div>
                   <img 
                     src="https://i.imgur.com/Nbk5NGu.jpeg" 
-                    alt="Sócios MRInvest" 
+                    alt="Michel Pires e William Martinelli - Fundadores da MRInvest" 
                     className="w-full aspect-square object-cover rounded-xl shadow-lg"
                     data-testid="img-founders"
                   />
@@ -48,16 +48,54 @@ export default function AboutSection() {
                   <h3 className="text-2xl font-semibold text-foreground mb-6" data-testid="text-founders-title">
                     Nossos Fundadores
                   </h3>
-                  <p className="text-foreground/70 leading-relaxed text-lg mb-6" data-testid="text-founders-description">
-                    Com mais de 15 anos de experiência combinada no mercado imobiliário internacional, 
-                    nossos sócios construíram a MRInvest para oferecer acesso exclusivo às melhores 
-                    oportunidades de investimento nos Estados Unidos.
-                  </p>
-                  <div className="flex items-center gap-4 justify-center md:justify-start">
-                    <div className="w-2 h-2 bg-primary rounded-full animate-pulse" />
-                    <span className="text-sm text-foreground/60 font-medium">Especialistas em Real Estate Internacional</span>
+                  
+                  <div className="space-y-6">
+                    <div>
+                      <h4 className="text-lg font-semibold text-foreground mb-2" data-testid="text-michel-name">
+                        Michel Pires
+                      </h4>
+                      <p className="text-foreground/70 leading-relaxed" data-testid="text-michel-description">
+                        Executivo com histórico comprovado no desenvolvimento de projetos imobiliários na Flórida, da aquisição à entrega.
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-lg font-semibold text-foreground mb-2" data-testid="text-william-name">
+                        William Martinelli
+                      </h4>
+                      <p className="text-foreground/70 leading-relaxed" data-testid="text-william-description">
+                        Especialista em estrutura, captação e automação, com experiência em startups e consultoria de crescimento.
+                      </p>
+                    </div>
                   </div>
                 </div>
+              </div>
+            </CardContent>
+          </Card>
+        </motion.div>
+        
+        {/* Nosso Propósito */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+          viewport={{ once: true }}
+          className="mt-24"
+        >
+          <Card className="bg-gradient-to-r from-primary/10 to-destructive/10 border border-border/50 shadow-xl">
+            <CardContent className="p-12 text-center">
+              <h3 className="text-3xl font-bold text-foreground mb-8" data-testid="text-purpose-title">
+                Nosso Propósito
+              </h3>
+              
+              <div className="max-w-4xl mx-auto space-y-6">
+                <p className="text-lg text-foreground/80 leading-relaxed" data-testid="text-purpose-description-1">
+                  Juntos, unimos décadas de experiência prática em real estate, estruturação jurídica, tecnologia e estratégia de negócios para oferecer ao investidor brasileiro um caminho claro, estruturado e seguro para construir patrimônio nos Estados Unidos.
+                </p>
+                
+                <p className="text-xl text-foreground font-medium leading-relaxed" data-testid="text-purpose-description-2">
+                  Guiar brasileiros na realização de sonhos e na conquista de renda em dólar com investimentos reais, consultoria migratória, educação e geração de renda operacional.
+                </p>
               </div>
             </CardContent>
           </Card>
