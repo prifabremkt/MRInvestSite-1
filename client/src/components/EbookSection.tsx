@@ -15,18 +15,18 @@ export default function EbookSection() {
             viewport={{ once: true }}
             className="relative md:justify-self-end order-2 md:order-1"
           >
-            <div className="relative max-w-lg mx-auto">
-              <img 
-                src="https://i.imgur.com/59ioLSv.png" 
-                alt="Guia de Investimentos nos EUA" 
-                className="w-full h-auto object-contain"
-                data-testid="img-ebook-cover"
-                loading="lazy"
-                decoding="async"
-              />
-              {/* Subtle glow effect optimized */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-destructive/5 rounded-xl blur-lg -z-10 opacity-20" />
-            </div>
+            <img 
+              src="https://i.imgur.com/59ioLSv.png" 
+              alt="Guia de Investimentos nos EUA" 
+              className="w-full h-auto object-contain max-w-lg mx-auto"
+              style={{
+                background: 'transparent !important',
+                backgroundColor: 'transparent !important'
+              }}
+              data-testid="img-ebook-cover"
+              loading="lazy"
+              decoding="async"
+            />
           </motion.div>
 
           {/* Content Column */}
